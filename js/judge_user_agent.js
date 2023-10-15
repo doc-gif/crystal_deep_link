@@ -1,4 +1,4 @@
-window.My_APP = window.My_APP || {};
+window.Sui_APP = window.Sui_APP || {};
 
 Sui_APP.UserAgent = (() => {
     let ua = navigator.userAgent;
