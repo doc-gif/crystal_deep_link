@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
     <title>MY APP</title>
     <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
@@ -17,7 +17,7 @@
 
     window.My_APP = window.My_APP || {};
 
-    $(function() {
+    $(() => {
         let userAgent = window.My_APP.UserAgent();
         if (userAgent === USER_AGENT_NOT_SMART_PHONE) {
             window.location = MY_WEB_PAGE_URL;
@@ -26,9 +26,8 @@
 
         $("body").append("<iframe src='" + MY_APP_SCHEMA  + "' style='display:none'/>");
         let checkedAt = (new Date()).getTime();
-        window.setTimeout(function() {
+        window.setTimeout(() => {
             let lagTime = (new Date()).getTime() - checkedAt;
-            $("iframe").remove();
             if (lagTime > LAG_TIME) {
                 window.location = userAgent ? IOS_STORE_URL : ANDROID_STORE_URL;
             }
