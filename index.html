@@ -19,11 +19,14 @@
     function launchApp() {
         let userAgent = Sui_APP.UserAgent();
         if (userAgent === IOS) {
-            try {
-                window.location = IOS_SCHEME + '://';
-            } catch (e) {
-                window.location = SUI_WEB;
-            }
+            let checkedAt = new Date();
+            setTimeout(function() {
+                let diff = new Date() - checkedAt;
+                if (diff < 2000) {
+                    window.location = SUI_WEB;
+                }
+            }, 5000);
+            window.location = IOS_SCHEME + '://';
         } else if (userAgent === ANDROID) {
             document.location = 'intent://#Intent;scheme=' + ANDROID_SCHEME
                 + ';package=' + ANDROID_PACKAGE + ';end';
