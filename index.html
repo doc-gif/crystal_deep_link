@@ -21,10 +21,11 @@
         if (userAgent === IOS) {
             let isBlur = false;
             window.location = IOS_SCHEME + '://';
-            window.addEventListener("blur", () => {
-                isBlur = true;
-            });
-            if (!isBlur) window.location = SUI_WEB;
+
+            // window.addEventListener("blur", () => {
+            //     isBlur = true;
+            // });
+            // if (!isBlur) window.location = SUI_WEB;
         } else if (userAgent === ANDROID) {
             document.location = 'intent://#Intent;scheme=' + ANDROID_SCHEME
                 + ';package=' + ANDROID_PACKAGE + ';end';
