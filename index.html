@@ -23,7 +23,7 @@
             window.addEventListener("blur", () => {
                 exit;
             });
-            document.location = SUI_WEB;
+            window.location = SUI_WEB;
         } else if (userAgent === ANDROID) {
             document.location = 'intent://#Intent;scheme=' + ANDROID_SCHEME
                 + ';package=' + ANDROID_PACKAGE + ';end';
