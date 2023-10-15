@@ -24,11 +24,10 @@
             return false;
         }
 
-        $("body").append("<iframe src='" + MY_APP_SCHEMA  + "' style='display:none'/>");
+        window.location.href = MY_APP_SCHEMA;
         let checkedAt = (new Date()).getTime();
         window.setTimeout(() => {
             let lagTime = (new Date()).getTime() - checkedAt;
-            $("iframe").remove();
             if (lagTime > LAG_TIME) {
                 window.location = userAgent ? IOS_STORE_URL : ANDROID_STORE_URL;
             }
