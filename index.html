@@ -19,7 +19,7 @@
     function launchApp() {
         let userAgent = Sui_APP.UserAgent();
         if (userAgent === IOS) {
-            launch_frame.location.href = IOS_SCHEME + '://';
+            location.href = IOS_SCHEME + '://';
 
             setTimeout(() => {
                 location.href = SUI_WEB;
@@ -34,9 +34,5 @@
 
     window.onload = () => launchApp();
 </script>
-<div style="width:0; height:0; overflow:hidden;">
-    <iframe id="launch_frame" name="launch_frame">
-    </iframe>
-</div>
 </body>
 </html>
