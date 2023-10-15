@@ -5,33 +5,36 @@
     <script type="text/javascript" src="js/judge_user_agent.js"></script>
 </head>
 <body>
+<div style="width: 0; height: 0; overflow: hidden;">
+    <iframe id="launch_frame" name="launch_frame"> </iframe>
+</div>
 <script>
-    const IOS_STORE_URL = "https://apps.apple.com/jp/app/su-i-%E9%9B%BB%E5%8B%95%E3%82%AD%E3%83%83%E3%82%AF%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B7%E3%82%A7%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/id6446895264";
-    const ANDROID_STORE_URL = "https://play.google.com/store/apps/details?id=com.crystal.sui_app&hl=ja";
-    const SUI_WEB_URL = "https://su-i-ride.com/";
-    const SUI_SCHEMA = "com.crystal.sui-app://";
-    const USER_AGENT_NOT_SMART_PHONE = -1
-    const LAG_TIME = 1000;
-    const TIMEOUT = 3000;
+    const SUI_WEB = "https://su-i-ride.com/";
+    const IOS_STORE = "https://apps.apple.com/jp/app/su-i-%E9%9B%BB%E5%8B%95%E3%82%AD%E3%83%83%E3%82%AF%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B7%E3%82%A7%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/id6446895264";
+    const IOS_SCHEME = "com.crystal.sui-app";
+    const ANDROID_SCHEME = "com.crystal.sui-app";
+    const ANDROID_PACKAGE = "com.crystal.sui_app";
+    const IOS = 1;
+    const ANDROID = 0;
 
     window.Sui_APP = window.Sui_APP || {};
 
-    $(() => {
-        let userAgent = window.Sui_APP.UserAgent();
-        if (userAgent === USER_AGENT_NOT_SMART_PHONE) {
-            window.location = SUI_WEB_URL;
-            return false;
+    function launchApp() {
+        let userAgent = Sui_APP.UserAgent();
+        if (userAgent === IOS) {
+            launch_frame.location.href = IOS_SCHEME + '://';
+            setTimeout(() => {
+               location.href = IOS_STORE;
+            }, 500);
+        } else if (userAgent === ANDROID) {
+            document.location = 'intent://#Intent;scheme=' + ANDROID_SCHEME
+                + ';package=' + ANDROID_PACKAGE + ';end';
+        } else {
+            document.location = SUI_WEB;
         }
+    }
 
-        window.location.href = SUI_SCHEMA;
-        let checkedAt = (new Date()).getTime();
-        window.setTimeout(() => {
-            let lagTime = (new Date()).getTime() - checkedAt;
-            if (lagTime > LAG_TIME && history.length !== 1) {
-                window.location = userAgent ? IOS_STORE_URL : ANDROID_STORE_URL;
-            }
-        }, TIMEOUT);
-    });
+    window.onload = () => launchApp();
 </script>
 </body>
 </html>
