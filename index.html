@@ -21,9 +21,9 @@
         if (userAgent === IOS) {
             launch_frame.location.href = IOS_SCHEME + '://';
 
-            // setTimeout(() => {
-            //     location.href = SUI_WEB;
-            // } , 500);
+            setTimeout(() => {
+                location.href = SUI_WEB;
+            } , 500);
         } else if (userAgent === ANDROID) {
             document.location = 'intent://#Intent;scheme=' + ANDROID_SCHEME
                 + ';package=' + ANDROID_PACKAGE + ';end';
