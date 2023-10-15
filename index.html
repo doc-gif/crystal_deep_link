@@ -22,7 +22,11 @@
             launch_frame.location.href = IOS_SCHEME + '://';
 
             setTimeout(() => {
-                location.href= SUI_WEB;
+                document.addEventListener("visibilitychange", () => {
+                    if (document.visibilityState !== "hidden") {
+                        location.href = SUI_WEB;
+                    }
+                });
             } , 500);
         } else if (userAgent === ANDROID) {
             document.location = 'intent://#Intent;scheme=' + ANDROID_SCHEME
