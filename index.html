@@ -24,7 +24,7 @@
             return false;
         }
 
-        $("body").append("<iframe src='" + MY_APP_SCHEMA  + "' style='display:none'/>");
+        window.location = MY_APP_SCHEMA;
         let checkedAt = (new Date()).getTime();
         window.setTimeout(() => {
             let lagTime = (new Date()).getTime() - checkedAt;
