@@ -23,7 +23,7 @@
 
             setTimeout(() => {
                 document.addEventListener("visibilitychange", () => {
-                    if (document.visibilityState !== "hidden") {
+                    if (document.visibilityState === "hidden") {
                         location.href = SUI_WEB;
                     }
                 });
