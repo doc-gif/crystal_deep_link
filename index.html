@@ -8,8 +8,8 @@
 <script>
     const SUI_WEB = "https://su-i-ride.com/";
     const IOS_STORE = "https://apps.apple.com/jp/app/su-i-%E9%9B%BB%E5%8B%95%E3%82%AD%E3%83%83%E3%82%AF%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B7%E3%82%A7%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/id6446895264";
-    const IOS_SCHEME = "com.crystal.sui-app";
-    const ANDROID_SCHEME = "com.crystal.sui-app";
+    const IOS_SCHEME = "crystal-su-i";
+    const ANDROID_SCHEME = "crystal-su-i";
     const ANDROID_PACKAGE = "com.crystal.sui_app";
     const IOS = 1;
     const ANDROID = 0;
@@ -21,9 +21,9 @@
         if (userAgent === IOS) {
             launch_frame.location.href = IOS_SCHEME + '://';
 
-            // setTimeout(() => {
-            //     location.href = SUI_WEB;
-            // } , 500);
+            setTimeout(() => {
+                location.href = SUI_WEB;
+            } , 500);
         } else if (userAgent === ANDROID) {
             document.location = 'intent://#Intent;scheme=' + ANDROID_SCHEME
                 + ';package=' + ANDROID_PACKAGE + ';end';
