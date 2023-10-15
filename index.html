@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MY APP</title>
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/judge_user_agent.js"></script>
+</head>
+<body>
+<script>
+    const IOS_STORE_URL = "https://apps.apple.com/jp/app/su-i-%E9%9B%BB%E5%8B%95%E3%82%AD%E3%83%83%E3%82%AF%E3%83%9C%E3%83%BC%E3%83%89%E3%82%B7%E3%82%A7%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/id6446895264";
+    const ANDROID_STORE_URL = "https://play.google.com/store/apps/details?id=com.crystal.sui_app&hl=ja";
+    const MY_WEB_PAGE_URL = "https://su-i-ride.com/";
+    const MY_APP_SCHEMA = "com.crystal.sui-app://";
+    const USER_AGENT_NOT_SMART_PHONE = -1
+    const LAG_TIME = 400;
+    const TIMEOUT = 1000;
+
+    window.My_APP = window.My_APP || {};
+
+    $(function() {
+        let userAgent = window.My_APP.UserAgent();
+        if (userAgent === USER_AGENT_NOT_SMART_PHONE) {
+            window.location = MY_WEB_PAGE_URL;
+            return false;
+        }
+
+        $("body").append("<iframe src='" + MY_APP_SCHEMA  + "' style='display:none'/>");
+        let checkedAt = (new Date()).getTime();
+        window.setTimeout(function() {
+            let lagTime = (new Date()).getTime() - checkedAt;
+            $("iframe").remove();
+            if (lagTime > LAG_TIME) {
+                window.location = userAgent ? IOS_STORE_URL : ANDROID_STORE_URL;
+            }
+        }, TIMEOUT);
+    });
+</script>
+</body>
+</html>
