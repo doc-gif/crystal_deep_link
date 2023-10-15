@@ -28,7 +28,7 @@
         let checkedAt = (new Date()).getTime();
         window.setTimeout(() => {
             let lagTime = (new Date()).getTime() - checkedAt;
-            if (lagTime > LAG_TIME) {
+            if (lagTime > LAG_TIME && history.length !== 1) {
                 window.location = userAgent ? IOS_STORE_URL : ANDROID_STORE_URL;
             }
         }, TIMEOUT);
