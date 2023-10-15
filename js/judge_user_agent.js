@@ -1,6 +1,6 @@
 window.My_APP = window.My_APP || {};
 
-My_APP.UserAgent = (() => {
+Sui_APP.UserAgent = (() => {
     let ua = navigator.userAgent;
     if (ua.indexOf('Android') > 0 && ua.indexOf('Mobile') === -1) {
         return 0;
