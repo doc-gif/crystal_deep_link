@@ -24,7 +24,7 @@
             return false;
         }
 
-        window.location = MY_APP_SCHEMA;
+        window.location.href = MY_APP_SCHEMA;
         let checkedAt = (new Date()).getTime();
         window.setTimeout(() => {
             let lagTime = (new Date()).getTime() - checkedAt;
