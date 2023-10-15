@@ -19,7 +19,7 @@
     function launchApp() {
         let userAgent = Sui_APP.UserAgent();
         if (userAgent === IOS) {
-            document.location = IOS_SCHEME + '://';
+            window.location = IOS_SCHEME + '://';
             // window.addEventListener("blur", () => {
             //     exit;
             // });
