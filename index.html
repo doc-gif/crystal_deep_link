@@ -27,9 +27,9 @@
                     if (document.visibilityState === "hidden") {
                         isHidden = true;
                     }
-                    if (!isHidden) window.location = SUI_WEB;
+                    if (!isHidden) window.location.href = SUI_WEB;
                 });
-            } , 25);
+            } , 250);
         } else if (userAgent === ANDROID) {
             document.location = 'intent://#Intent;scheme=' + ANDROID_SCHEME
                 + ';package=' + ANDROID_PACKAGE + ';end';
