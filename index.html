@@ -19,7 +19,7 @@
     function launchApp() {
         let userAgent = Sui_APP.UserAgent();
         if (userAgent === IOS) {
-            window.location.href = IOS_SCHEME + '://';
+            window.location = IOS_SCHEME + '://';
 
             setTimeout(() => {
                 let isHidden = false;
@@ -27,7 +27,7 @@
                     if (document.visibilityState === "hidden") {
                         isHidden = true;
                     }
-                    if (!isHidden) window.location.href = IOS_STORE;
+                    if (!isHidden) window.location = SUI_WEB;
                 });
             } , 25);
         } else if (userAgent === ANDROID) {
