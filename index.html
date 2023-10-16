@@ -27,7 +27,7 @@
                     if (document.visibilityState === "hidden") {
                         isHidden = true;
                     }
-                    if (!isHidden) document.location = SUI_WEB;
+                    if (!isHidden) window.location = SUI_WEB;
                     return false;
                 });
             } , 250);
@@ -35,7 +35,7 @@
             document.location = 'intent://#Intent;scheme=' + ANDROID_SCHEME
                 + ';package=' + ANDROID_PACKAGE + ';end';
         } else {
-            document.location = SUI_WEB;
+            document.location = IOS_STORE;
         }
     }
 
