@@ -21,7 +21,7 @@
         if (userAgent === IOS) {
             window.location = IOS_SCHEME + '://';
 
-            SetTimeout(() => {
+            setTimeout(() => {
                 window.location = SUI_WEB;
             }, 250);
         } else if (userAgent === ANDROID) {
