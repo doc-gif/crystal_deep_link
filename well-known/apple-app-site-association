@@ -13,11 +13,7 @@
 				        "exclude": true,
 			        },
 			        {
-			        	"/": "/deep-link/",
-			        },
-			        {
-			        	"/": "/*",
-			        	"exclude": true,
+			        	"/": "/",
 			        },
 		        ],
             }
