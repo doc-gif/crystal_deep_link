@@ -1,0 +1,26 @@
+{
+    "applinks": {
+        "details": [
+            {
+                "appIDs":
+                [
+                "3PC86CTSTF.com.crystal.sui-app",
+                ],
+                "components":
+                [
+			        {
+				        "#": "no_universal_links",
+				        "exclude": true,
+			        },
+			        {
+			        	"/": "/deep-link/",
+			        },
+			        {
+			        	"/": "/*",
+			        	"exclude": true,
+			        },
+		        ],
+            }
+        ]
+    }
+}
