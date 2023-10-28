@@ -13,7 +13,10 @@
 				        "exclude": true,
 			        },
 			        {
-			        	"/": "/",
+			        	"/": "/deeplink/*",
+			        },
+			        {
+			            "/": "/crystal_deep_link/*",
 			        },
 		        ],
             }
