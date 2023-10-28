@@ -23,9 +23,9 @@
             setTimeout(() => {
                 let t = new Date() - checkedAt;
                 if (t < 2000) {
-                    window.location = IOS_STORE;
+                    window.location = SUI_WEB;
                 }
-            }, 1000);
+            }, 500);
             window.location = IOS_SCHEME + "://";
         } else if (userAgent === ANDROID) {
             document.location = 'intent://#Intent;scheme=' + ANDROID_SCHEME
