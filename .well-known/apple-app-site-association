@@ -18,6 +18,9 @@
 			        {
 			            "/": "/crystal_deep_link/*",
 			        },
+			        {
+			            "/": "/ekyc-return-url/*"
+			        }
 		        ],
             }
         ]
