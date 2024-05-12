@@ -7,6 +7,7 @@
 <body>
 <script>
   const APP_SCHEME = "crystal-su-i";
+  const HOST_NAME = "su-i-app"
   const PAGE_URL = "eKYC-result";
   const IOS = 1;
   const ANDROID = 0;
@@ -16,9 +17,9 @@
   function launchEKYCResultPage() {
     let userAgent = Sui_APP.UserAgent();
     if (userAgent === IOS) {
-      window.location = APP_SCHEME + "://" + PAGE_URL;
+      window.location = APP_SCHEME + "://" + HOST_NAME + "/" + PAGE_URL;
     } else if (userAgent === ANDROID) {
-      document.location = APP_SCHEME + "://" + PAGE_URL;
+      document.location = APP_SCHEME + "://" + HOST_NAME + "/" + PAGE_URL;
     }
   }
 
