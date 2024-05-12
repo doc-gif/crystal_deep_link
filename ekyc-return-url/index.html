@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>Su__i</title>
+  <script type="text/javascript" src="js/judge_user_agent.js"></script>
+</head>
+<body>
+<script>
+  const APP_SCHEME = "crystal-su-i";
+  const PAGE_URL = "eKYC-result";
+  const IOS = 1;
+  const ANDROID = 0;
+
+  window.Sui_APP = window.Sui_APP || {};
+
+  function launchEKYCResultPage() {
+    let userAgent = Sui_APP.UserAgent();
+    if (userAgent === IOS) {
+      window.location = APP_SCHEME + "://" + PAGE_URL;
+    } else if (userAgent === ANDROID) {
+      document.location = APP_SCHEME + "://" + PAGE_URL;
+    }
+  }
+
+  window.onload = () => launchEKYCResultPage();
+</script>
+</body>
+</html>
