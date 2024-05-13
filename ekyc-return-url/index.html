@@ -19,7 +19,12 @@
     if (userAgent === IOS) {
       window.location = APP_SCHEME + "://" + HOST_NAME + "/" + PAGE_URL;
     } else if (userAgent === ANDROID) {
-      document.location = "https://doc-gif.github.io/ekyc-return-url";
+      document.location = "intent:" +
+              "doc-gif.github.io/ekyc-return-url" +
+              "#Intent;" +
+              "package=com.crystal.sui_app;" +
+              "scheme=https;" +
+              "end";
     }
   }
 
