@@ -20,10 +20,10 @@
       window.location = APP_SCHEME + "://" + HOST_NAME + "/" + PAGE_URL;
     } else if (userAgent === ANDROID) {
       document.location = "intent://" +
-              "crystal.com/ekyc-return-url" +
+              // "crystal.com/ekyc-return-url" +
               "#Intent;" +
-              "action=android.intent.action.VIEW;" +
-              "category=android.intent.category.BROWSABLE;" +
+              // "action=android.intent.action.VIEW;" +
+              // "category=android.intent.category.BROWSABLE;" +
               "package=com.crystal.sui_app;" +
               "scheme=crystal-su-i;" +
               "end";
