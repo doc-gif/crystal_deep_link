@@ -7,8 +7,8 @@
 <body>
 <script>
   const APP_SCHEME = "crystal-su-i";
-  const HOST_NAME = "su-i-app"
-  const PAGE_URL = "eKYC-result";
+  const HOST_NAME = "crystal.com"
+  const PAGE_URL = "ekyc-return-url";
   const IOS = 1;
   const ANDROID = 0;
 
@@ -19,14 +19,7 @@
     if (userAgent === IOS) {
       window.location = APP_SCHEME + "://" + HOST_NAME + "/" + PAGE_URL;
     } else if (userAgent === ANDROID) {
-      document.location = "intent://" +
-              // "crystal.com/ekyc-return-url" +
-              "#Intent;" +
-              // "action=android.intent.action.VIEW;" +
-              // "category=android.intent.category.BROWSABLE;" +
-              "package=com.crystal.sui_app;" +
-              "scheme=crystal-su-i;" +
-              "end";
+      document.location = APP_SCHEME + "://" + HOST_NAME + "/" + PAGE_URL;
     }
   }
 
