@@ -19,7 +19,7 @@
     if (userAgent === IOS) {
       window.location = APP_SCHEME + "://" + HOST_NAME + "/" + PAGE_URL;
     } else if (userAgent === ANDROID) {
-      document.location = "intent://" + PAGE_URL + "#Intent;scheme=" + APP_SCHEME + "";
+      // document.location = "intent://" + PAGE_URL + "#Intent;scheme=" + APP_SCHEME + "";
     }
   }
 
